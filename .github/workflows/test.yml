@@ -38,8 +38,14 @@ jobs:
     - name: check file permission
       run: ls -al
 
+    - name: create a new file
+      run: touch src/somethin.txt && echo "hello" >> src/somethin.txt
+
     - name: commit
-      run: git commit -m "test"
+      run: |
+        git add .
+        git commit -m "test"
+
 
     - name: check .out/commits.txt
       run: |
