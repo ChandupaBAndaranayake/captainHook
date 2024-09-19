@@ -29,6 +29,24 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Check file permissions
+      run: |
+       ls -l out/commits.txt
+       ls -ld out
+
+    - name: Print out directory contents
+      run: ls -al out
+
+    - name: Set file permissions
+      run: chmod +x execute.sh
+
+
+    - name: set file permissions
+      run: chmod 644 out/commits.txt
+
+    - name: Set directory permissions
+      run: chmod 755 out
+
     - name: Run tests
       run: npm test
 
