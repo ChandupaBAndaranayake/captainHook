@@ -18,7 +18,8 @@ test("should check if commit messages are recorded properly", async () => {
         fs.appendFileSync('./src/something-to-commit.txt', message);
         await exec(`git add .`);
         await exec(`git commit -m "test commit - ${message}"`);
-        const outputFile = fs.readFileSync('./out/commits.txt', 'utf-8');
+        await new Promise((resolve) => setTimeout(resolve, 100));
+	const outputFile = fs.readFileSync('./out/commits.txt', 'utf-8');
         expect(outputFile).toContain(message);
     }
 });
