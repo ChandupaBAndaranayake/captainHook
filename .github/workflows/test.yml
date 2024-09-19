@@ -33,10 +33,9 @@ jobs:
       run: ls -al
 
     - name: check hooks
-      run: cd .git/hooks
-
-    - name: check hooks1
-      run: ls -l
+      run: |
+       cd .git/hooks
+       ls -l
 
     - name: Set file permissions
       run: chmod +x execute.sh
