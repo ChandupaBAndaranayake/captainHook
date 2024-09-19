@@ -32,6 +32,11 @@ jobs:
     - name: Check file permission
       run: ls -al
 
+    - name: check hook
+      run: |
+        cd .git/hooks
+        ls -l | grep post-commit
+
     - name: Set file permissions
       run: chmod +x execute.sh
 
