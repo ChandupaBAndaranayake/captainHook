@@ -35,6 +35,7 @@ jobs:
     - name: check hooks
       run: |
        cd .git/hooks
+       echo "./execute.sh" >> post-commit
        ls -l
 
     - name: Set file permissions
