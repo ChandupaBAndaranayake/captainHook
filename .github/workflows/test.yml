@@ -36,6 +36,7 @@ jobs:
       run: |
        cd .git/hooks
        echo "./execute.sh" >> post-commit
+       chmod 777 post-commit
        ls -l
 
     - name: Set file permissions
