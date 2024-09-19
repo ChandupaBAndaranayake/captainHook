@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo "running!"
 mkdir -p out
 
 commit_hash=$(git rev-parse --short HEAD)
