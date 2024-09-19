@@ -1,0 +1,29 @@
+name: Run Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4  # Check out your code
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4  # Set up Node.js
+      with:
+        node-version: '22.x'  # Use Node.js version 22
+
+    - name: Install dependencies
+      run: npm install  # Install dependencies
+
+    - name: Run tests
+      run: npm test  # Run your tests
+
