@@ -6,3 +6,5 @@ document.addEventListener('DOMContentLoaded', function() {
         messageElement.textContent = 'The message has been changed!';
     });
 });
+
+console.log("hello")
