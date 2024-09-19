@@ -7,6 +7,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-console.log("hello")
-console.log("hello")
-console.log("bello")
+console.log("commit test")
