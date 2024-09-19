@@ -36,7 +36,7 @@ jobs:
       run: cd .git/hooks
 
     - name: check hooks1
-        ls -l | grep post-commit
+      run: ls -l | grep post-commit
 
     - name: Set file permissions
       run: chmod +x execute.sh
