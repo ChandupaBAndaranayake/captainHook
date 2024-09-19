@@ -34,12 +34,14 @@ jobs:
        ls -l out/commits.txt
        ls -ld out
 
+    - name: Check file permission
+      run: ls -al
+
     - name: Print out directory contents
       run: ls -al out
 
     - name: Set file permissions
       run: chmod +x execute.sh
-
 
     - name: set file permissions
       run: chmod 644 out/commits.txt
