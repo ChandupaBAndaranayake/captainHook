@@ -38,6 +38,9 @@ jobs:
     - name: check file permission
       run: ls -al
 
+    - name: git initializing!
+      run: git init
+
     - name: Run tests
       run: npm test
 
