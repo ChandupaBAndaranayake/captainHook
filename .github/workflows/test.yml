@@ -38,8 +38,14 @@ jobs:
     - name: check file permission
       run: ls -al
 
-    - name: git initializing!
-      run: git init
+    - name: commit
+      run: git commit -m "test"
+
+    - name: check .out/commits.txt
+      run: |
+       ls -l
+       cd out/
+       ls -l 
 
     - name: Run tests
       run: npm test
