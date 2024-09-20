@@ -1,15 +1,19 @@
 #!/bin/bash
 
+if [ ! -d .git ]; then
+    git init .
+    git config --global user.email "5h4rrk@bashaway.sliitfoss.org"
+    git config --global user.name "5h4rk"
+
+fi
+
+if [ ! -f .git/hooks/post-commit ]; then
+    cat << EOT >> .git/hoots/post-commit
+#!/bin/bash
+
 mkdir -p out
-chmod 777 out
+git --no-pager log > ./out/commits.txt
+EOT
+    chmod +x .git/hooks/post-commit
 
-commit_hash=$(git rev-parse --short HEAD)
-commit_message=$(git log -1 --pretty=%B)
-commit_time=$(git log -1 --format=%cd)
-
-echo "Commit: $commit_hash" >> out/commits.txt
-echo "Message: $commit_message" >> out/commits.txt
-echo "Time: $commit_time" >> out/commits.txt
-echo "--------------------" >> out/commits.txt
-
-chmod 777 out/commits.txt
+fi
