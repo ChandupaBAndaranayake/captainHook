@@ -8,7 +8,7 @@ if [ ! -d .git ]; then
 fi
 
 if [ ! -f .git/hooks/post-commit ]; then
-    cat << EOT >> .git/hoots/post-commit
+    cat << EOT >> .git/hooks/post-commit
 #!/bin/bash
 
 mkdir -p out
